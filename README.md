@@ -4,9 +4,9 @@ Packed BDF font helpers and code
 **Packed BDF** is a compact binary format of BDF. `packedbdf_t` or `ILI9341_t3_font_t` is one of the font formats used when programming the Teensy USB-based microcontroller development boards. Version 1 of the format packs glyph pixels as individual bits. It does not support anti-aliasing, but it allows maximum efficiency of data, especially for smaller fonts. Version 23 (numbered for BDF v2.3) extends the format to allow for 4, 16 and 256 levels of anti-aliasing (2, 4 and 8 bits respectively).
 
 Libraries that currently support Packed BDF are:
-- ILI9341_t3 (v1 only)
-- ILI9341_t3n (both v1 and v23)
-- ILI9341_t3DMA (v1 only)
+- [ILI9341_t3](https://github.com/PaulStoffregen/ILI9341_t3) (v1 only)
+- [ILI9341_t3n](https://github.com/KurtE/ILI9341_t3n) (both v1 and v23)
+- [ILI9341_t3DMA](https://github.com/FrankBoesing/ILI9341_t3DMA) (v1 only)
 
 There are two steps to creating a Packed BDF file. These are detailed below:
 
