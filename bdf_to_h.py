@@ -30,11 +30,7 @@ from PIL import Image
 # SOFTWARE.
 
 # Will create a header file for each bdf font file, either
-# as a ILI9341_t3_font_t or a mac::bdffont_t. This is determined by
-# the number of bits per pixel. If there is only 1 bpp, the BDF
-# is an original on/off bitmap font and ILI9341_t3_font_t will
-# be created. If the bpp is greater than 1 then an anti-aliased
-# mac::bdffont_t will be created.
+# as a bdffont_t.
 
 # Many thanks to original c code from Paul Stoffregen used as reference
 # https://github.com/PaulStoffregen/ILI9341_t3/blob/master/extras/bdf_to_ili9341.c
@@ -435,7 +431,7 @@ for file in list(resources):
 	outstr += '/* font index size: '+str(indexsize)+' bytes */\n\n'
 
 	# output font structure
-	outstr += 'const mac::packedbdf_t '+font_name+' = {\n'
+	outstr += 'const packedbdf_t '+font_name+' = {\n'
 	outstr += '\t'+font_name+'_index,\n'
 	outstr += '\t0,\n'
 	outstr += '\t'+font_name+'_data,\n'
