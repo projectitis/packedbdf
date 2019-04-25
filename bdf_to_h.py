@@ -290,6 +290,7 @@ for file in list(resources):
 				if prop[0] == 'ENCODING':
 					found_encoding = True
 					encoding = int(prop[1])
+					if (encoding<1): raise Exception('ENCODING '+str(encoding)+' not supported, at line '+str(linenum))
 					log('    Encoding',encoding)
 					if encoding_start2>0:
 						if encoding != (encoding_end2+1): raise Exception('ENCODING more than 2 encoding ranges ('+encoding_start1+'-'+encoding_end1+', '+encoding_start2+','+encoding_end2+'), at line '+str(linenum))
@@ -389,6 +390,7 @@ for file in list(resources):
 	# start header file
 	outstr = '#ifndef _PACKEDBDF_'+font_name.upper()+'_\n'
 	outstr += '#define _PACKEDBDF_'+font_name.upper()+'_\n\n'
+	outstr += '#include "PackedBDF.h"\n\n'
 
 	# if we are creating an external file for data, create the header stub first
 	if extern:
