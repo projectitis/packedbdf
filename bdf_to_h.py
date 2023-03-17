@@ -397,7 +397,7 @@ for file in list(resources):
 		outstr += '#ifdef __cplusplus\n'
 		outstr += 'extern "C" {\n'
 		outstr += '#endif\n\n'
-		outstr += 'extern const packedbdf_t '+font_name+'\n\n'
+		outstr += 'extern const packedbdf_t '+font_name+';\n\n'
 		outstr += '#ifdef __cplusplus\n'
 		outstr += '}\n'
 		outstr += '#endif\n\n'
