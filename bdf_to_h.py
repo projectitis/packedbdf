@@ -275,7 +275,7 @@ for file in list(resources):
 						elif (bits_per_pixel==4): bpp_index = 2
 						elif (bits_per_pixel==8): bpp_index = 3
 						else: raise Exception('BITS_PER_PIXEL not supported, at line '+str(linenum))
-						bpp_mask = (1 << (bpp_index+1))-1
+						bpp_mask = (1 << bits_per_pixel)-1
 						pix_per_byte = 8/bits_per_pixel
 				elif prop[0] == 'FONT_ASCENT':
 					found_ascent = True
